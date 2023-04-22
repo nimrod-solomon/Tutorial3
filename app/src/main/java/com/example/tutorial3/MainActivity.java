@@ -133,15 +133,17 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Clear",Toast.LENGTH_SHORT).show();
                 LineData data = mpLineChart.getData();
                 ILineDataSet set = data.getDataSetByIndex(0);
-                data.getDataSetByIndex(0);
-                while(set.removeLast()){}
+                set.clear();
+                set = data.getDataSetByIndex(1);
+                set.clear();
                 val=40;
+                gaussianRandom = 40.0;
                 counter = 1;
 
             }
         });
 
-        
+
         mHandlar.postDelayed(DataUpdate,500);
     }
 
@@ -178,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
    }
 
     private void OpenBarplotShow(){
-        Intent intent = new Intent(this,BarChart.class);
+        Intent intent = new Intent(this,barChart.class);
         startActivity(intent);
     }
 
