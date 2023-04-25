@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/nimro/AndroidStudioProjects/Tutorial3/app/src/main/res/layout/activity_bar_chart.xml" value="0.25" />
+        <entry key="..\:/Users/nimro/AndroidStudioProjects/Tutorial3/app/src/main/res/layout/activity_load_csv.xml" value="0.25" />
+        <entry key="..\:/Users/nimro/AndroidStudioProjects/Tutorial3/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/nimro/AndroidStudioProjects/Tutorial3_nimrod/app/src/main/res/layout/activity_bar_chart.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/nimro/AndroidStudioProjects/Tutorial3_nimrod/app/src/main/res/layout/activity_load_csv.xml" value="0.264" />
         <entry key="..\:/Users/nimro/AndroidStudioProjects/Tutorial3_nimrod/app/src/main/res/layout/activity_main.xml" value="0.25" />
