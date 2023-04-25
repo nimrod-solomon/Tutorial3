@@ -1,7 +1,6 @@
 package com.example.tutorial3;
 
 import android.app.Activity;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -10,20 +9,15 @@ import android.view.View;
 import android.widget.Button;
 
 import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.LegendEntry;
 
-import com.github.mikephil.charting.utils.ColorTemplate;
 import com.opencsv.CSVReader;
 import java.io.File;
 import java.io.FileReader;
@@ -38,7 +32,8 @@ public class barChart extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bar_chart);
-        Button backButton = findViewById(R.id.button_back);
+        Button buttonLiveChart = findViewById(R.id.live_chart);
+        Button buttonOpenCSV = findViewById(R.id.opencsv);
         BarChart barChart = findViewById(R.id.barchart);
         Legend legend = barChart.getLegend();
         legend.setForm(Legend.LegendForm.SQUARE);
@@ -111,10 +106,17 @@ public class barChart extends Activity {
         xAxis.setTextSize(16f);
         barChart.invalidate();
 
-        backButton.setOnClickListener(new View.OnClickListener() {
+        buttonLiveChart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ClickBack();
+                ClickLiveChart();
+            }
+        });
+
+        buttonOpenCSV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClickOpenCSV();
             }
         });
     }
@@ -145,8 +147,13 @@ public class barChart extends Activity {
         return Math.sqrt(sum / (count - 1));
     }
 
-    private void ClickBack() {
+    private void ClickLiveChart() {
         Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    private void ClickOpenCSV() {
+        Intent intent = new Intent(this, LoadCSV.class);
         startActivity(intent);
     }
 
